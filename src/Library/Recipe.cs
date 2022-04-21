@@ -34,7 +34,7 @@ namespace Full_GRASP_And_SOLID.Library
         }
 
         /// <summary>
-        /// Metodo que se encarga de devolver el costo de los ingredientes que se utilizaron para la receta.
+        /// Metodo que se encarga de recorrer todos los pasos de la receta y devolver el costo de los ingredientes que se utilizaron para la misma.
         /// </summary>
         /// <returns></returns>
         public double GetProductionIngredientsCost()
@@ -42,12 +42,12 @@ namespace Full_GRASP_And_SOLID.Library
             double totalIngredientsCost = 0;
             foreach (Step step in this.steps)
             {
-                totalIngredientsCost += Costo.CostoInsumos(step);
+                totalIngredientsCost += RecipeCost.InsumosCost(step);
             }
             return totalIngredientsCost;
         }
         /// <summary>
-        /// Metodo que se encarga de devolver el costo del equipamiento que se utilizó para la receta.
+        /// Metodo que se encarga de recorrer todos los pasos de la receta y devolver el costo del equipamiento que se utilizó.
         /// </summary>
         /// <returns></returns>
         public double GetProductionEquipmentCost()
@@ -55,12 +55,12 @@ namespace Full_GRASP_And_SOLID.Library
             double totalEquipmentCost = 0;
             foreach (Step step in this.steps)
             {
-                totalEquipmentCost += Costo.CostoEquipment(step);
+                totalEquipmentCost += RecipeCost.EquipmentCost(step);
             }
             return totalEquipmentCost;
         }
         /// <summary>
-        /// Metodo que se encarga de devolver el costo total de la receta, sumando el costo del equipamiento y el costo de los insumos.
+        /// Metodo que se encarga de recorrer todos los pasos de la receta y devolver el costo total, sumando el costo del equipamiento y el costo de los insumos a través del metodo "GetProductionCost".
         /// </summary>
         /// <returns></returns>
         public double GetProductionCost()
@@ -68,7 +68,7 @@ namespace Full_GRASP_And_SOLID.Library
             double totalProductionCost = 0;
             foreach (Step step in this.steps)
             {
-                totalProductionCost += Costo.GetProductionCost(step);
+                totalProductionCost += RecipeCost.GetProductionCost(step);
             }
             return totalProductionCost;
         }
