@@ -60,7 +60,7 @@ namespace Full_GRASP_And_SOLID.Library
             return totalEquipmentCost;
         }
         /// <summary>
-        /// Metodo que se encarga de recorrer todos los pasos de la receta y devolver el costo total, sumando el costo del equipamiento y el costo de los insumos a través del metodo "GetProductionCost".
+        /// Método que se encarga de recorrer todos los pasos de la receta y devolver el costo total, sumando el costo del equipamiento y el costo de los insumos a través del metodo "GetProductionCost".
         /// </summary>
         /// <returns></returns>
         public double GetProductionCost()
